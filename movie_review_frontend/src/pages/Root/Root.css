@@ -1,0 +1,14 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+}
+
+.layout-top {
+  flex: 1; /* 20% */
+}
+
+.layout-bottom {
+  flex: 8; /* 80% */
+}

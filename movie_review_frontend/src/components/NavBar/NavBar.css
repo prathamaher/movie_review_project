@@ -1,0 +1,10 @@
+.nav-container {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.nav-container nav {
+  /* background-color: #cbf1f5; */
+  background-color: #94e4ed;
+}
