@@ -1,20 +1,17 @@
-    const express = require('express');
-    const cors = require('cors'); // If using CORS
-    const bodyParser = require('body-parser'); // If using body-parser
+const express = require('express')
+const cors = require('cors')
 
-    const app = express();
-    const PORT = process.env.PORT || 5000; // Or any preferred port
+const app = express()
 
-    // Middleware
-    app.use(cors()); // If using CORS
-    app.use(bodyParser.json()); // To parse JSON request bodies
+const Movies = require('./routes/movies') ;
 
-    // Define a basic route
-    app.get('/', (req, res) => {
-      res.send('Hello from the Node.js backend!');
-    });
+app.use(cors())
+app.use(express.json())
 
-    // Start the server
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+// Routes
+//app.use('/auth', require('./routes/auth'))
+app.use('/movie',Movies )
+//app.use('/review', require('./routes/reviews'))
+//app.use('/share', require('./routes/shares'))
+
+app.listen(5000, () => console.log("SERVER RUNNING ON 5000"))
