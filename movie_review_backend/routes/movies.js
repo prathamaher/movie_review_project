@@ -11,7 +11,7 @@ const router = express.Router()
 router.post('/add', (req, res) => {
     const { title, release} = req.body
     
-    const sql = `INSERT INTO movies(title, release) VALUES(?,?)`
+    const sql = "INSERT INTO movies(title,`release`) VALUES (?,?)"
     pool.query(sql, [title, release], (error, data) => {
         res.send(result.createResult(error, data))
     })
